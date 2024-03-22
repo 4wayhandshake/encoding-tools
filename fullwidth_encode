@@ -1,0 +1,7 @@
+#!/bin/bash
+if [ "$#" -gt 0 ]; then
+    input_string="$1"
+else
+    while IFS= read -r line; do input_string="$input_string$line\n"; done
+fi
+python3 /home/$USER/.local/share/fullwidth_encode.py "$input_string"
